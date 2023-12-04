@@ -105,7 +105,7 @@ for desired_sparsity in args.sparsities:
         channel_num = 1 if args.t2_only else 2
     else:
         raise NotImplementedError
-    u_mask = get_full_mask(args.dataset_name, 0, desired_sparsity, args.mask_name)
+    u_mask = get_full_mask(args.dataset_name, 0, desired_sparsity, args.mask_name, args.mask_path, args.qmodal)
     model = loupe.models.loupe_model(input_shape=vol_size + (channel_num,),
                                      filt=64,
                                      kern=3,
