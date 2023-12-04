@@ -41,7 +41,7 @@ python loupe_test.py --mask_name ours --qmodal T2 -- sparsities 0.25 0.125 --nb_
 ```
 
 ## Citation
-If this implementation is helpful for your research, please consider citating our work:
+If this implementation is helpful for your research, please consider citing our work:
 ```
 @article{yang2022fast,
   title={Fast multi-contrast MRI acquisition by optimal sampling of information complementary to pre-acquired MRI contrast},
