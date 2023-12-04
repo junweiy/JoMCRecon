@@ -108,14 +108,14 @@ for desired_sparsity in args.sparsities:
                                          pmask_slope=args.pmask_slope,
                                          sparsity=desired_sparsity,
                                          sample_slope=args.sample_slope,
-                                         umask=get_full_mask(args.dataset_name, 0, desired_sparsity, 1),
+                                         umask=get_full_mask(args.dataset_name, 0, desired_sparsity, args.mask_name, args.mask_path, args.qmodal),
                                          loupe_residual=loupe_residual,
                                          dataset_name=args.dataset_name)
     else:
         raise NotImplementedError
 
     # compile
-    model.compile(optimizer=adam_v2.Adam(lr=lr), loss=loss,
+    model.compile(optimizer=adam_v2.Adam(lr=args.lr), loss=args.loss,
                   metrics=[loupe.models.compute_psnr, loupe.models.compute_ssim])
 
     # prepare save sub-folder
